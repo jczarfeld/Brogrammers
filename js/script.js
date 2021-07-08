@@ -4,7 +4,7 @@ var workoutBtn = document.getElementById("getWorkout");
 // This takes the category number, inserts it into the url vairable and selects a random workout
 // Then this logs the exercise base from the workout chosen
 function getMyWorkout(event) {
-event.preventDefault();
+  event.preventDefault();
 
   var workoutChoice = document.querySelector('#workout-input').options[document.querySelector('#workout-input').selectedIndex].getAttribute("value");
   var timeChoice = document.querySelector('#time-input').options[document.querySelector('#time-input').selectedIndex].getAttribute("value");
@@ -25,20 +25,22 @@ function getExercises(workoutChoice, timeChoice) {
     .then(function (catData) {
       console.log(catData);
 
-     // for (var i = 0; i < timeChoice, i++) {
+      // for (var i = 0; i < timeChoice, i++) {
 
-        var catItem = catData.results[Math.floor(Math.random() * catData.results.length)];
-       
-       
-        console.log(catItem);
-        console.log(catItem.name);
-        console.log(catItem.description);
-        console.log(catItem.exercise_base);
-        var storedWorkout = JSON.stringify(catItem);
-        console.log(storedWorkout);
-        localStorage.setItem("storedWorkout", storedWorkout);
+      var catItem = catData.results[Math.floor(Math.random() * catData.results.length)];
 
-     // }
+
+      console.log(catItem);
+      console.log(catItem.name);
+      console.log(catItem.description);
+      console.log(catItem.exercise_base);
+
+      //this tuurns the object into a string so it can be stored and moved
+      var storedWorkout = JSON.stringify(catItem);
+      console.log(storedWorkout);
+      localStorage.setItem("storedWorkout", storedWorkout);
+
+      // }
     })
 
   // printResults(catItem);
