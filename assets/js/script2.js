@@ -1,13 +1,18 @@
 resultContentEl = document.querySelector("#result-content");
 var newWorkout = localStorage.getItem("storedWorkout");
-var nameContent = localStorage.getItem('name');
-var descriptionContent = localStorage.getItem('description');
-console.log(nameContent);
-//console.log(nameContent);
-  //  console.log(descriptionContent);
-function printResults() {
-    console.log(nameContent);
-    console.log(descriptionContent);
+
+console.log(newWorkout);
+
+var resultsWorkout = JSON.parse(newWorkout);
+console.log(resultsWorkout);
+console.log(resultsWorkout.name);
+
+
+
+function printResults(resultsWorkout) {
+    console.log(resultsWorkout.name);
+    console.log(resultsWorkout.description);
+    
     var resultCard = document.createElement('div');
     resultCard.classList.add('card', 'mb-3', 'p-3');
     var resultBody = document.createElement('div');
@@ -15,15 +20,16 @@ function printResults() {
     resultCard.append(resultBody);
     var nameContentEl = document.createElement('p');
     nameContentEl.innerHTML =
-      '<strong>Exercise Name: </strong> ' + nameContent + '<br/>';
+        '<strong>Exercise Name: </strong> ' + resultsWorkout.name + '<br/>';
     var descriptionContentEl = document.createElement('p');
     descriptionContentEl.innerHTML =
-      '<strong>Exercise Description: </strong> ' + descriptionContent + '<br/>';
+        '<strong>Exercise Description: </strong> ' + resultsWorkout.description + '<br/>';
     var linkButtonEl = document.createElement('a');
     linkButtonEl.textContent = 'Read More';
-    linkButtonEl.setAttribute('href', "https://wger.de/en/exercise/307/view/" + nameContent);
+    linkButtonEl.setAttribute('href', "https://wger.de/en/exercise/overview/");
+    linkButtonEl.setAttribute('target', "_blank");
     linkButtonEl.classList.add('btn', 'btn-dark');
     resultBody.append(nameContentEl, descriptionContentEl, linkButtonEl);
     resultContentEl.append(resultCard);
-  }
-  printResults();
+}
+printResults(resultsWorkout);

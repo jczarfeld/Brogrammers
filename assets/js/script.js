@@ -4,12 +4,15 @@ var workoutBtn = document.getElementById("getWorkout");
 // This takes the category number, inserts it into the url vairable and selects a random workout
 // Then this logs the exercise base from the workout chosen
 function getMyWorkout(event) {
-  event.preventDefault();
+event.preventDefault();
+
   var workoutChoice = document.querySelector('#workout-input').options[document.querySelector('#workout-input').selectedIndex].getAttribute("value");
-  var timeChoice = document.querySelector('#time-input')
+  var timeChoice = document.querySelector('#time-input').options[document.querySelector('#time-input').selectedIndex].getAttribute("value");
   console.log(workoutChoice);
   console.log(timeChoice);
-  // location.href= "./index2.html"
+
+  location.href = "./index2.html"
+
   getExercises(workoutChoice, timeChoice)
 }
 
@@ -21,18 +24,25 @@ function getExercises(workoutChoice, timeChoice) {
     })
     .then(function (catData) {
       console.log(catData);
-      var catItem = catData.results[Math.floor(Math.random() * catData.results.length)];
-      console.log(catItem);
-      console.log(catItem.name);
-      console.log(catItem.description);
-      console.log(catItem.exercise_base);
-      var storedWorkout = JSON.stringify(catItem);
-      console.log(storedWorkout);
-      localStorage.setItem("storedWorkout", catItem);
-      var newBigWorkout = localStorage.getItem("storedWorkout");
-      console.log(newBigWorkout);
-      //  localStorage.setItem('name', catItem.name);
-      //  localStorage.setItem('description', catItem.description);
+
+     // for (var i = 0; i < timeChoice, i++) {
+
+        var catItem = catData.results[Math.floor(Math.random() * catData.results.length)];
+       
+       
+        console.log(catItem);
+        console.log(catItem.name);
+        console.log(catItem.description);
+        console.log(catItem.exercise_base);
+        var storedWorkout = JSON.stringify(catItem);
+        console.log(storedWorkout);
+        localStorage.setItem("storedWorkout", storedWorkout);
+
+     // }
     })
-};
+
+  // printResults(catItem);
+
+}
+
 workoutBtn.addEventListener("click", getMyWorkout);
