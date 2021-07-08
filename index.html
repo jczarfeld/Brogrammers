@@ -1,14 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brogrammers</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/uikit.min.css" />
+  <link rel="stylesheet" href="css/style.css">
+  <title>Sweat Equity</title>
 </head>
+
 <body>
-  <div id="result-content"></div>
-    <h1>Sweat Equity</h1>
-  <script src="./assets/js/script.js"></script>  
+  <header>
+    <h1
+      class="uk-heading-line uk-text-muted uk-padding-small uk-text-center uk-heading-large uk-background-secondary uk-margin-remove-bottom">
+      <span>Sweat Equity</span></h1>
+  </header>
+  <div class="uk-background-blend-lighten uk-background-cover uk-height-large" uk-height-viewport="offset-bottom: true"
+    style="background-image: url(./images/mainbackground.jfif);">
+    <form class="uk-flex .uk-flex-center@s uk-flex-right@l uk-margin-large-right">
+      <fieldset class="uk-fieldset uk-width-1-2 uk-margin-large-top">
+        <legend class="uk-legend uk-text-center uk-text-dark">Start Building Your Sweat Equity!</legend>
+        <div class="uk-margin">
+          <input class="uk-input" type="text" placeholder="Location" id="location">
+        </div>
+        <div class="uk-margin">
+          <select class="uk-select" id="workout-input">
+            <option value="8">Arms</option>
+            <option value="12">Back</option>
+            <option value="11">Chest</option>
+            <option value="9">Legs</option>
+            <option value="13">Shoulders</option>
+          </select>
+        </div>
+        <div class="uk-margin">
+          <select class="uk-select" id="time-input">
+            <option id="time">30 Minutes</option>
+            <option id="time">1 Hour</option>
+            <option id="time">1:30 Hours</option>
+          </select>
+        </div>
+        <button class="uk-button uk-button-primary uk-width-1-1 uk-margin-small-bottom" id="getWorkout">Get My
+          Workout!</button>
+      </fieldset>
+    </form>
+  </div>
+  <footer>
+    <h4>Made with :heart:️ by the Brogrammers</h4>
+    <p>
+      &copy; 2021 Brogrammers, Inc.
+    </p>
+  </footer>
+  <script src="./js/uikit.min.js"></script>
+  <script src="./js/uikit-icons.min.js"></script>
+  <script src="./js/script.js"></script>
 </body>
+
 </html>
