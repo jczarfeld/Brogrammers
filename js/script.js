@@ -15,6 +15,7 @@ function getMyWorkout(event) {
     console.log(timeChoice);
 
     getExercises(workoutChoice, timeChoice)
+    location.href = "./index2.html"
 }
 
 function getExercises(workoutChoice, timeChoice) {
