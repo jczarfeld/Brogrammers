@@ -43,6 +43,12 @@ function printResults(resultsWorkout) {
     resultBody.append(nameContentEl, descriptionContentEl, linkButtonEl);
     resultContentEl.append(resultCard);
 }
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
+  
+  
 function forecast (getCity) {
     var forecastHeader = document.getElementById("forecast-header");
     forecastHeader.removeAttribute("class", "invisible");
@@ -53,6 +59,7 @@ function forecast (getCity) {
     var forecastApi = "https://api.openweathermap.org/data/2.5/forecast?q=" + getCity + "&appid=" + apiKey + "&units=imperial";
 
     console.log(forecastApi);
+    
 
     // fetch forecast information
     fetch(forecastApi)
@@ -61,6 +68,7 @@ function forecast (getCity) {
         })
         .then(function(data) {
             console.log(data);
+            console.log(capitalizeFirstLetter(data.list[0].weather[0].description));
             
             // iterate over data and only pull back time with "12:00" present (returns several times for each day)
            // for (var i = 0; i < data.list.length; i++) {
@@ -83,7 +91,7 @@ function forecast (getCity) {
               //  forecastHeader.textContent = moment(data.list[i].dt_txt.split("12:")[0]).format("MMMM Do, YYYY");
                 
                 forecastWind.className = "card-text";
-                forecastWind.textContent = "Wind Speed: " + data.list[0].wind.speed + " MPH";
+                forecastWind.textContent =  capitalizeFirstLetter(data.list[0].weather[0].description);
                 forecastHumidity.className = "card-text"
                 forecastHumidity.textContent = "Humidity : " + data.list[0].main.humidity + "%";
                 forecastTemperature.className = "card-text"
