@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GYM/Fitness search</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <h1>Brogrammers INC Map Template</h1>
+    <div id="container">
+      <div id="map"></div>
+      <div id="sidebar">
+        <h2>Showing Local Gyms:</h2>
+        <ul id="places"></ul>
+        <button id="more">Load more Gyms</button>
+      </div>
+
+    </div>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWCeNY_dm5Zigp44gdpZtYIftFPKrveTo
+      &callback=initMap&libraries=places&v=weekly&map_ids=8d193001f940fde3&channel=2"
+      async
+    ></script>
+    <script src="./script.js"></script>
+    
+  </body>
+</html>
