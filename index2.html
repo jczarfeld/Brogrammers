@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,30 +9,125 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="./js/uikit.min.js"></script>
     <script src="./js/uikit-icons.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="http://maps.google.com/maps/api/js?libraries=places&sensor=false"></script>
     <title>Sweat Equity</title>
 </head>
+
 <body>
 
     <header>
-        <h1 class="uk-heading-line uk-text-muted uk-padding-small uk-text-center uk-heading-large uk-background-secondary uk-margin-remove-bottom"><span>Sweat Equity</span></h1>
+        <nav class="uk-navbar-container uk-margin" uk-navbar>
+            <div class="uk-navbar-left">
+
+                <a class="uk-navbar-item uk-logo" href="#">Sweat Equity</a>
+
+                <ul class="uk-navbar-nav">
+                    <li>
+                        <a href="./index.html">
+                            <span class="uk-icon uk-margin-small-right" uk-icon="icon: home"></span>
+                            Home
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="uk-navbar-item">
+                    <button class="uk-button uk-button-default" type="button">GitHub</button>
+                    <div uk-dropdown>
+                        <ul class="uk-nav uk-dropdown-nav">
+                            <li class="uk-active"><a target="_blank" href="https://github.com/mitch-skaff">Mitch</a>
+                            </li>
+                            <li class="uk-active"><a target="_blank" href="https://github.com/mcfulmer13">Mac</a></li>
+                            <li class="uk-active"><a target="_blank" href="https://github.com/jczarfeld">John</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
     </header>
 
-    <main class="uk-container uk-margin-remove-left">
-        <section class="uk-flex uk-flex-column uk-width-1-3" id="result-content">
+    <main class="uk-container uk-margin-top uk-width-expand">
+        <div class="uk-flex uk-flex-around uk-flex-center">
 
+            <section>
+                <h2 h2 class="uk-heading-bullet">Search for a GYM/Park</h2>
+                <input id="pac-input" class="controls" type="text"
+                    placeholder="Search Gym/Park in your City" />
+                <div id="map"></div>
+
+
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWCeNY_dm5Zigp44gdpZtYIftFPKrveTo&callback=initAutocomplete&libraries=places&v=weekly&channel=2" async></script>
+            </section>
+
+            <section>
+                <h2 h2 class="uk-heading-bullet" id=>Weather Near You</h2>
+                <div id="forecast-display">
+
+                </div>
+            </section>
+
+            <section>
+                <article class="uk-comment uk-comment-primary">
+                    <header class="uk-comment-header">
+                        <div class="uk-grid-medium uk-flex-middle" uk-grid>
+                            <div class="uk-width-auto">
+                                <img class="uk-comment-avatar" src="./images/therock.jfif" width="100" height="100"
+                                    alt="">
+                            </div>
+                            <div class="uk-width-expand">
+                                <h4 class="uk-comment-title uk-margin-remove"><a class="uk-link-reset" href="#">Dwyane
+                                        "The Rock" Johnson</a></h4>
+                                <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top">
+                                    <li><a href="#">12 days ago</a></li>
+                                    <li><a href="#">Reply</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </header>
+                    <div class="uk-comment-body">
+                        <p>As far as I'm concerned, this is why the internet was invented.</p>
+                    </div>
+                </article>
+
+                <hr class="uk-divider-icon">
+
+                <article class="uk-comment uk-comment-primary">
+                    <header class="uk-comment-header">
+                        <div class="uk-grid-medium uk-flex-middle" uk-grid>
+                            <div class="uk-width-auto">
+                                <img class="uk-comment-avatar" src="./images/therock2.jfif" width="100" height="100"
+                                    alt="">
+                            </div>
+                            <div class="uk-width-expand">
+                                <h4 class="uk-comment-title uk-margin-remove"><a class="uk-link-reset" href="#">Derek
+                                        Jameson</a></h4>
+                                <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top">
+                                    <li><a href="#">11 days ago</a></li>
+                                    <li><a href="#">Reply</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </header>
+                    <div class="uk-comment-body">
+                        <p>If you want to look like a Simoan God, or "The Rock", this is the website for you!</p>
+                    </div>
+                </article>
+
+            </section>
+
+        </div>
+
+        <section>
+            <h2 class="uk-heading-bullet">Workout</h2>
+            <div id="result-content" class="uk-flex uk-flex-row uk-flex-around uk-flex-wrap">
+
+            </div>
         </section>
 
-
-
-        <hr class="uk-divider-icon-vertical">
-
-
-
-
-
     </main>
-
-
     <script src="./js/script2.js"></script>
+    <script src="js/script3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
 </body>
+
 </html>

@@ -13,6 +13,9 @@ function getMyWorkout(event) {
 
     var workoutChoice = document.querySelector('#workout-input').options[document.querySelector('#workout-input').selectedIndex].getAttribute("value");
     var timeChoice = document.querySelector('#time-input').options[document.querySelector('#time-input').selectedIndex].getAttribute("value");
+    var cityChoice = document.querySelector("#location").value;
+
+    localStorage.setItem("city", cityChoice);
     console.log(workoutChoice);
     console.log(timeChoice);
 
